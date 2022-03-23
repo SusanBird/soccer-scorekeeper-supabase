@@ -28,6 +28,9 @@ export async function createGame(game){
 
 export async function getGames() {
     // select all games from the games table
+    const response = await client
+        .from('games')
+        .select('*');
 
     return checkError(response);    
 }
@@ -68,5 +71,6 @@ export async function logout() {
 }
 
 function checkError({ data, error }) {
+    // eslint-disable-next-line no-console
     return error ? console.error(error) : data;
 }
