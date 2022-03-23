@@ -39,8 +39,8 @@ nameForm.addEventListener('submit', (e) => {
     const data = new FormData(nameForm);
 
     // set the state to this data from the form
-    currentGame.name1 = data.get('.team-one');
-    currentGame.name2 = data.get('.team-two');
+    currentGame.name1 = data.get('team-one');
+    currentGame.name2 = data.get('team-two');
 
     // reset the form values
     nameForm.reset(); 
@@ -121,8 +121,9 @@ function displayCurrentGameEl() {
     teamTwoLabel.textContent = currentGame.name2;
 
     // call the render game function to create a game element
-    const gameEl = renderGame(currentGame);
     currentGameEl.classList.add('current');
+
+    const gameEl = renderGame(currentGame);
 
     // append the element to the cleared out current game div
     currentGameEl.append(gameEl);
