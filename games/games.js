@@ -28,12 +28,19 @@ let score2 = 0;
 
 nameForm.addEventListener('submit', (e) => {
     // don't forget to prevent the default form behavior!
+    e.preventDefault();
 
     // get the name data from the form
+    const teamOneText = document.querySelector('.team-one');
+    const teamTwoText = document.querySelector('.team-two');
 
     // set the state to this data from the form
+    name1 = teamOneText.value;
+    name2 = teamTwoText.value;
 
     // reset the form values
+    teamOneText.value = '';           
+    teamTwoText.value = '';
 
     displayCurrentGameEl()
 });
