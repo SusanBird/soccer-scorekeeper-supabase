@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { 
     redirectToGames, 
     signInUser, 
@@ -36,3 +37,5 @@ signInForm.addEventListener('submit', async(event)=>{
         console.error(user);
     }
 });
+
+//comment 
